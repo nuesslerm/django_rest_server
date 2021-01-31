@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack --mode development --watch",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "clean": "rm -rf ./static"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
