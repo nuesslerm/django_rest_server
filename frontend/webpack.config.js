@@ -1,14 +1,15 @@
-import path from 'path';
-import webpack from 'webpack';
+/* eslint-disable @typescript-eslint/no-var-requires */
+const path = require('path');
+const webpack = require('webpack');
 
-const config: webpack.Configuration = {
+module.exports = {
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
   },
   devtool: 'inline-source-map',
-  entry: '.src/index.tsx',
+  entry: './src/index.tsx',
   output: {
-    path: path.resolve(__dirname, '.static/js'),
+    path: path.resolve(__dirname, './static/js'),
     filename: 'main.js',
   },
   module: {
@@ -34,5 +35,3 @@ const config: webpack.Configuration = {
     }),
   ],
 };
-
-export default config;
