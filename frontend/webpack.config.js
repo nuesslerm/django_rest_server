@@ -21,6 +21,38 @@ module.exports = {
           loader: 'babel-loader',
         },
       },
+      {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: '@svgr/webpack',
+            options: {
+              svgoConfig: {
+                plugins: {
+                  removeViewBox: false,
+                },
+              },
+            },
+          },
+          'url-loader',
+        ],
+      },
+      {
+        test: /png|jpe?g|gif/i,
+        use: [
+          {
+            loader: 'url-loader',
+          },
+        ],
+      },
+      {
+        test: /\.(eot|otf|ttf|woff|woff2)$/,
+        use: 'file-loader',
+      },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
     ],
   },
   optimization: {
