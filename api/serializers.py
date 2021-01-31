@@ -14,3 +14,11 @@ class RoomSerializer(serializers.ModelSerializer):
         #     "created_at",
         # )
         fields = "__all__"
+
+
+# handle the request
+class CreateRoomSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Room
+        fields = ("guest_can_pause", "votes_to_skip")
+        # fields = "__all__"
