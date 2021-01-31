@@ -17,9 +17,7 @@ module.exports = {
       {
         test: /\.(ts|js)x?$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-        },
+        use: 'babel-loader',
       },
       {
         test: /\.svg$/,
@@ -29,7 +27,10 @@ module.exports = {
             options: {
               svgoConfig: {
                 plugins: {
+                  //  I want to remove the width & height attributes and keep the viewbox, by default it removes those.
                   removeViewBox: false,
+                  // removeAttrs: true,
+                  // mergePaths: false,
                 },
               },
             },
@@ -39,15 +40,11 @@ module.exports = {
       },
       {
         test: /png|jpe?g|gif/i,
-        use: [
-          {
-            loader: 'url-loader',
-          },
-        ],
+        use: 'url-loader',
       },
       {
         test: /\.(eot|otf|ttf|woff|woff2)$/,
-        use: 'file-loader',
+        use: { loader: 'file-loader' },
       },
       {
         test: /\.css$/i,
