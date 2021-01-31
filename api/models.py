@@ -17,6 +17,7 @@ def generate_unique_code():
 
 # Create your models here.
 # Have fat models and thin views
+# There's automatically an id field on every model
 class Room(models.Model):
     code = models.CharField(max_length=8, default="", unique=True)
     host = models.CharField(max_length=50, unique=True)
