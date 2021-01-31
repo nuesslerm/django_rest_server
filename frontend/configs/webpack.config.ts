@@ -1,7 +1,7 @@
 import path from 'path';
 import webpack from 'webpack';
 
-module.exports = {
+const config: webpack.Configuration = {
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
   },
@@ -34,3 +34,5 @@ module.exports = {
     }),
   ],
 };
+
+export default config;
