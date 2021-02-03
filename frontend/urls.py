@@ -7,6 +7,8 @@ from .views import index
 urlpatterns = [
     # match the root
     path(r"", index),
+    # dynamic URL
+    path("room/<str:roomCode>", index),
     # match all other pages
     re_path(r"^(?:.*)/?$", index),
 ]
